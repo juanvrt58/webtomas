@@ -37,6 +37,14 @@ h1,h2,h3,h4{
   line-height:1.2;
 }
 
+/* Escala tipográfica única: todo título del mismo nivel usa el mismo tamaño
+   en cualquier sección de la página, salvo los títulos decorativos que
+   llevan su propia clase (.big-header, .socios-banner h2). */
+h1{ font-size:2.6rem; }
+h2{ font-size:2rem; }
+h3{ font-size:1.35rem; }
+h4{ font-size:1.15rem; }
+
 p{ margin:0 0 1em 0; }
 
 a{ color: inherit; }
@@ -51,12 +59,13 @@ img{ max-width:100%; display:block; }
 
 /* ---------- Header / logo bar ---------- */
 .site-header{
-  padding:18px 32px;
+  padding:14px 32px 0;
   display:flex;
   align-items:center;
 }
 .site-header img{ height:46px; width:auto; }
 .site-header .logo-link{ display:inline-block; }
+.site-header + section{ padding-top: 20px; }
 
 /* ---------- Navigation ---------- */
 .nav-wrap{
@@ -135,7 +144,6 @@ img{ max-width:100%; display:block; }
   text-align:center;
 }
 .page-banner h1{
-  font-size:2.6rem;
   margin-bottom:.3em;
 }
 .page-banner p{
@@ -151,6 +159,15 @@ section.tight{ padding: 40px 0; }
 .section-title-red{ color: var(--rojo); }
 .section-title-blue{ color: var(--azul); }
 .section-title-green{ color: var(--verde-oscuro); }
+/* Cuando ambos colores conviven en un mismo título (ej. "Soluciones
+   Fitosanitarias para un acceso Global"), se fuerza el mismo tamaño y
+   peso en ambos tramos para que no se perciban distintos. */
+h2 > .section-title-red,
+h2 > .section-title-blue,
+h2 > .section-title-green{
+  font-size:1em;
+  font-weight:700;
+}
 
 .two-col{
   display:grid;
@@ -192,7 +209,7 @@ section.tight{ padding: 40px 0; }
 }
 .mv-card.mision{ background: var(--verde-oscuro); }
 .mv-card.vision{ background: var(--azul); }
-.mv-card h3{ font-size:1.4rem; margin-bottom:.4em; }
+.mv-card h3{ margin-bottom:.4em; }
 .mv-photo img{
   width:100%;
   display:block;
@@ -226,7 +243,7 @@ section.tight{ padding: 40px 0; }
   max-height:340px;
   box-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
-.servicio-block h3{ color: var(--azul); font-size:1.35rem; }
+.servicio-block h3{ color: var(--azul); }
 
 /* ---------- Systems approach big header ---------- */
 .big-header{
@@ -249,7 +266,7 @@ section.tight{ padding: 40px 0; }
   height:200px;
   object-fit:cover;
 }
-.equipo-card h3{ margin-bottom:.2em; font-size:1.25rem; }
+.equipo-card h3{ margin-bottom:.2em; }
 .equipo-card .comp-title{
   text-decoration:underline;
   font-weight:700;
@@ -262,7 +279,6 @@ section.tight{ padding: 40px 0; }
   border-radius: var(--radio);
   padding: 40px;
 }
-.equipo-panel > h2{ font-size:2rem; }
 .equipo-panel > p{ max-width:800px; }
 
 .equipo-wrap{
@@ -317,16 +333,12 @@ section.tight{ padding: 40px 0; }
 }
 
 /* ---------- Laboratorios ---------- */
-.lab-photos{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-.lab-photos img{
+.lab-single-img{
   border-radius: var(--radio);
   width:100%;
-  height:280px;
+  max-height:340px;
   object-fit:cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
 .lab-text h4{ color: var(--azul); margin-top:1.2em; margin-bottom:.3em; }
 .lab-text h4:first-child{ margin-top:0; }
@@ -343,7 +355,7 @@ section.tight{ padding: 40px 0; }
   gap:30px;
   align-items:start;
 }
-.footer-grid h2{ font-size:1.7rem; }
+.footer-grid h2{ margin-bottom:.4em; }
 .footer-grid h4{ margin-bottom:.3em; }
 .footer a{ color:#fff; text-decoration:underline; }
 
@@ -376,7 +388,6 @@ section.tight{ padding: 40px 0; }
   .equipo-card img{ height:220px; }
   .equipo-wrap{ grid-template-columns: 1fr; }
   .equipo-side-img{ height:200px; border-radius: var(--radio); }
-  .lab-photos{ grid-template-columns:1fr; }
   .nav-pill{ padding:12px 18px; gap:12px; }
   .nav-pill a{ font-size:.9rem; }
   .hero{ min-height:420px; }
