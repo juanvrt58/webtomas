@@ -1,0 +1,384 @@
+/* ===================================================
+   SCA — Servicio de Calidad Agrícola
+   Hoja de estilos compartida
+=================================================== */
+
+:root{
+  --verde-oscuro: #3d6b52;
+  --verde-oscuro-2: #345a45;
+  --rojo: #d52b1e;
+  --azul: #1c4e8a;
+  --texto: #2b2b2b;
+  --texto-suave: #4a4a4a;
+  --fondo: #ffffff;
+  --fondo-gris: #f6f6f4;
+  --borde: #e3e3e0;
+  --radio: 18px;
+  --max-width: 1180px;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height:1.6;
+  font-size:16px;
+}
+
+h1,h2,h3,h4{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif;
+  font-weight:700;
+  margin:0 0 .5em 0;
+  line-height:1.2;
+}
+
+p{ margin:0 0 1em 0; }
+
+a{ color: inherit; }
+
+img{ max-width:100%; display:block; }
+
+.container{
+  max-width: var(--max-width);
+  margin:0 auto;
+  padding:0 32px;
+}
+
+/* ---------- Header / logo bar ---------- */
+.site-header{
+  padding:18px 32px;
+  display:flex;
+  align-items:center;
+}
+.site-header img{ height:46px; width:auto; }
+.site-header .logo-link{ display:inline-block; }
+
+/* ---------- Navigation ---------- */
+.nav-wrap{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+.nav-pill{
+  background: rgba(255,255,255,0.92);
+  border-radius: 999px;
+  padding: 14px 34px;
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.nav-pill a{
+  text-decoration:none;
+  color:#2b2b2b;
+  font-size:1rem;
+  font-weight:600;
+  padding:2px 4px;
+  border-bottom:2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.nav-pill a:hover,
+.nav-pill a.active{
+  color: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+.nav-sep{ color:#bbb; user-select:none; }
+
+/* ---------- Hero (usado en Inicio) ---------- */
+.hero{
+  position:relative;
+  min-height: 520px;
+  background-size: cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  padding: 60px 20px;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+  z-index:0;
+}
+.hero > *{ position:relative; z-index:1; }
+.hero .brand{
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:.1em;
+  text-shadow: 0 3px 12px rgba(0,0,0,.35);
+}
+.hero .brand-sub{
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.5px;
+  margin-bottom:2.2em;
+  text-shadow: 0 2px 6px rgba(0,0,0,.4);
+}
+.hero .nav-wrap{ margin-top: 10px; }
+
+/* ---------- Page header banner (paginas internas) ---------- */
+.page-banner{
+  background: var(--verde-oscuro);
+  color:#fff;
+  padding: 70px 32px 60px;
+  text-align:center;
+}
+.page-banner h1{
+  font-size:2.6rem;
+  margin-bottom:.3em;
+}
+.page-banner p{
+  max-width:760px;
+  margin:0 auto;
+  font-size:1.05rem;
+  opacity:.95;
+}
+
+/* ---------- Section utility ---------- */
+section{ padding: 64px 0; }
+section.tight{ padding: 40px 0; }
+.section-title-red{ color: var(--rojo); }
+.section-title-blue{ color: var(--azul); }
+.section-title-green{ color: var(--verde-oscuro); }
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items:center;
+}
+.two-col.reverse .col-img{ order:2; }
+.two-col.reverse .col-text{ order:1; }
+
+.col-img img{
+  border-radius: var(--radio);
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+.lead{
+  font-size:1.05rem;
+  color: var(--texto-suave);
+  max-width: 900px;
+}
+
+/* ---------- Mision / Vision cards ---------- */
+.mv-wrap{
+  border-radius: var(--radio);
+  overflow:hidden;
+  position:relative;
+}
+.mv-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+}
+.mv-card{
+  padding: 32px 34px;
+  color:#fff;
+}
+.mv-card.mision{ background: var(--verde-oscuro); }
+.mv-card.vision{ background: var(--azul); }
+.mv-card h3{ font-size:1.4rem; margin-bottom:.4em; }
+.mv-photo img{
+  width:100%;
+  display:block;
+  max-height:340px;
+  object-fit:cover;
+}
+.quote{
+  font-style:italic;
+  text-align:center;
+  max-width:900px;
+  margin: 28px auto 0;
+  color: var(--texto-suave);
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+/* ---------- Servicios cards ---------- */
+.servicio-block{
+  display:grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap:40px;
+  align-items:center;
+  margin-bottom:56px;
+}
+.servicio-block.reverse{ grid-template-columns: 1.3fr 1fr; }
+.servicio-block.reverse .servicio-img{ order:2; }
+.servicio-block img{
+  border-radius: var(--radio);
+  width:100%;
+  object-fit:cover;
+  max-height:340px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+.servicio-block h3{ color: var(--azul); font-size:1.35rem; }
+
+/* ---------- Systems approach big header ---------- */
+.big-header{
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  color: var(--rojo);
+}
+.big-header + p{ max-width: 950px; }
+
+/* ---------- Equipo (team) ---------- */
+.equipo-card{
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  gap:26px;
+  margin-bottom:34px;
+  align-items:start;
+}
+.equipo-card img{
+  border-radius:14px;
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+.equipo-card h3{ margin-bottom:.2em; font-size:1.25rem; }
+.equipo-card .comp-title{
+  text-decoration:underline;
+  font-weight:700;
+  display:block;
+  margin:.6em 0 .3em;
+}
+.equipo-panel{
+  background: var(--verde-oscuro);
+  color:#fff;
+  border-radius: var(--radio);
+  padding: 40px;
+}
+.equipo-panel > h2{ font-size:2rem; }
+.equipo-panel > p{ max-width:800px; }
+
+.equipo-wrap{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  gap:0;
+  align-items:stretch;
+}
+.equipo-side-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:0 var(--radio) var(--radio) 0;
+}
+
+/* ---------- Socios ---------- */
+.socios-banner{
+  position:relative;
+  border-radius: var(--radio);
+  overflow:hidden;
+  min-height:260px;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.socios-banner::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.25);
+}
+.socios-banner h2{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  font-size: clamp(2rem,5vw,3rem);
+}
+.socios-logos{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  align-items:center;
+  justify-content:center;
+}
+.socios-logos img{ max-height:110px; width:auto; object-fit:contain; }
+.socios-grid{
+  display:grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+/* ---------- Laboratorios ---------- */
+.lab-photos{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.lab-photos img{
+  border-radius: var(--radio);
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+.lab-text h4{ color: var(--azul); margin-top:1.2em; margin-bottom:.3em; }
+.lab-text h4:first-child{ margin-top:0; }
+
+/* ---------- Footer / Informacion General ---------- */
+.footer{
+  background: var(--verde-oscuro);
+  color:#fff;
+  padding: 54px 0;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+.footer-grid h2{ font-size:1.7rem; }
+.footer-grid h4{ margin-bottom:.3em; }
+.footer a{ color:#fff; text-decoration:underline; }
+
+/* ---------- Contacto page extras ---------- */
+.contact-card{
+  background: var(--fondo-gris);
+  border:1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 36px;
+}
+.contact-card h3{ color: var(--verde-oscuro); }
+.map-note{ font-size:.9rem; color:#777; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px){
+  .two-col,
+  .servicio-block,
+  .servicio-block.reverse,
+  .socios-grid,
+  .footer-grid,
+  .mv-cards{
+    grid-template-columns: 1fr !important;
+  }
+  .two-col.reverse .col-img,
+  .two-col.reverse .col-text,
+  .servicio-block.reverse .servicio-img{
+    order:0 !important;
+  }
+  .equipo-card{ grid-template-columns: 1fr; }
+  .equipo-card img{ height:220px; }
+  .equipo-wrap{ grid-template-columns: 1fr; }
+  .equipo-side-img{ height:200px; border-radius: var(--radio); }
+  .lab-photos{ grid-template-columns:1fr; }
+  .nav-pill{ padding:12px 18px; gap:12px; }
+  .nav-pill a{ font-size:.9rem; }
+  .hero{ min-height:420px; }
+  section{ padding:44px 0; }
+}
