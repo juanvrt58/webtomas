@@ -102,18 +102,19 @@ img{ max-width:100%; display:block; }
 .nav-sep{ color:#bbb; user-select:none; }
 
 /* ---------- Hero (usado en Inicio) ---------- */
-.hero{
-  position:relative;
-  min-height: 520px;
-  background-size: cover;
-  background-position:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  padding: 60px 20px;
+.hero {
+  position: relative;
+  height: 380px;               /* 1. Cambiado de min-height de 520px a un height fijo controlado */
+  background-size: cover;      /* 2. Adapta la foto gigante de las flores al espacio sin deformarla */
+  background-position: center; /* 3. Centra el encuadre del fondo */
+  background-repeat: no-repeat;/* 4. Evita que la imagen se duplique en pantallas gigantes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
 }
 .hero::after{
   content:"";
