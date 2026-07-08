@@ -190,6 +190,15 @@
     </div>
   </div>
 </footer>
+<script>
+document.querySelector('a[href="#contacto"]').onclick = function(e){
+    e.preventDefault();
 
+    document.getElementById("contacto").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+};
+</script>
 </body>
 </html>
