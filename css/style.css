@@ -2,7 +2,9 @@
    SCA — Servicio de Calidad Agrícola
    Hoja de estilos compartida
 =================================================== */
-
+html {
+    scroll-behavior: smooth;
+}
 :root{
   --verde-oscuro: #3d6b52;
   --verde-oscuro-2: #345a45;
