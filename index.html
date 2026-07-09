@@ -12,16 +12,20 @@
 <body>
 
 <section class="hero" style="background-image:url('images/1_flores.jpeg');">
-  <div class="brand">SCA</div>
-  <div class="brand-sub">Corporación Servicio de Calidad Agrícola</div>
-  <nav class="nav-wrap">
-    <div class="nav-pill">
-      <span class="nav-sep">|</span>
-      <a href="#footer-info">Contacto</a>
-    </div>
-  </nav>
-</section>
 
+    <div class="hero-logo">
+        <img src="images/fulllogo_transparent.png" alt="SCA">
+    </div>
+
+    <nav class="nav-wrap">
+        <div class="nav-pill">
+            <a href="#inicio" class="active">Inicio</a>
+            <span class="nav-sep">|</span>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+</section>
 <header class="site-header" id="inicio">
   <a href="#inicio" class="logo-link"><img src="images/logo_crop.jpg" alt="SCA - Calidad con confianza fitosanitaria"></a>
 </header>
@@ -145,6 +149,45 @@
 
 
 <style>
+
+ .hero{
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Oscurece un poco la foto para que el logo destaque */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.18);
+}
+
+.hero-logo{
+    position:relative;
+    z-index:2;
+    margin-bottom:35px;
+}
+
+.hero-logo img{
+    width:430px;
+    max-width:80vw;
+    height:auto;
+    display:block;
+}
+
+.nav-wrap{
+    position:relative;
+    z-index:2;
+}
   :root {
     --verde-sca: #4c6b58;
     --verde-oscuro: #3e5747;
